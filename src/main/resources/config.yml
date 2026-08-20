@@ -1,0 +1,53 @@
+# ============================================
+#  ChainMine 连锁采集 配置文件
+#  改完执行 /连锁采集 重载（需管理员权限）
+# ============================================
+
+# 插件总开关
+enabled: true
+
+# 一次连锁最多挖掉的方块数量（默认 16，可调；注意开太大可能卡服）
+max-blocks: 16
+
+# 连锁扩散形状：'plus'（+ 型：上下左右前后）/ 'x'（X 型：含对角 8 方向）/ 'both'（都用）
+shape: plus
+
+# 触发模式：'normal' = 直接连锁 / 'sneak' = 潜行时才连锁 / 'never' = 默认关闭连锁(需玩家手动 /连锁采集 开启)
+trigger-mode: normal
+
+# 掉落物合并：true = 连锁挖掉的方块掉落物集中到被挖位置；false = 各自掉落（默认）
+merge-drops: false
+
+# 耐久扣减：true = 每连锁挖一格扣一格耐久（默认）；false = 不额外扣
+consume-durability: true
+
+# ============================================
+#  场景配置：可往 blocks 里自定义要连锁的方块（写方块英文名，如 stone / deepslate）
+#  tools 限定工具：[] 空 = 不限；可填如 [shovel] [pickaxe] [axe] 或具体物品名
+# ============================================
+
+# 连锁挖矿（矿石：以 _ORE 结尾的自动包含，如 coal_ore/iron_ore/diamond_ore 等）
+mining:
+  enabled: true
+  blocks: []          # 可额外加要连锁的矿石方块，如 [raw_iron_block, netherite_block]
+  tools: []           # 空=不限工具；填 [pickaxe] 则要求手持镐
+
+# 连锁砍树
+felling:
+  enabled: true
+  logs: true          # 砍原木只连锁同种原木（不连树叶）
+  leaves: true        # 砍树叶只连锁同种树叶
+  tools: []           # 空=不限；填 [axe] 则要求手持斧
+
+# 连锁石头（新增，默认开启）
+stone:
+  enabled: true
+  blocks: [stone, cobblestone, deepslate, granite, diorite, andesite, tuff, calcite, dripstone_block, basalt, blackstone]
+  tools: []           # 空=不限；填 [pickaxe] 则要求手持镐
+
+# 连锁挖土/沙砾/沙子（泥土等）
+digging:
+  enabled: true
+  require-tool: true  # true=必须用铲子才能连锁（默认）；false=徒手/任意工具也能连锁
+  blocks: [dirt, grass_block, coarse_dirt, podzol, mycelium, sand, gravel, soul_sand, soul_soil, clay, red_sand]
+  tools: []           # 空=按 require-tool 判断（需铲子）；填具体工具名则强制该工具
