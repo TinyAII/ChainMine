@@ -4,6 +4,8 @@
 
 镐挖一颗矿石，连着附近同种矿一起挖掉；斧砍一段木头，整棵连树带叶搞定；锹挖一块泥土，一片土沙全带走。支持 X 型 + 加号型连锁，上限、掉落、耐久、工具全都可配。
 
+> **MIT 开源** · 零依赖 · 可自由使用/修改/商用（保留 TinyAII 署名）
+
 ---
 
 ## 功能
@@ -100,4 +102,4 @@ Chain-mine ores, fell trees, dig stone & dirt all at once. Zero dependencies, wo
 - Zero dependencies
 
 ## Author
-TinyAII · 免费但闭源 · 零依赖
+**TinyAII** · MIT License · Zero dependencies · 免费开源
