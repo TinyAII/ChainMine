@@ -1,0 +1,18 @@
+name: ChainMine
+version: 1.1.0
+main: com.mcadmin.chainmine.ChainMinePlugin
+api-version: "1.16"
+author: TinyAII
+description: 连锁采集 - 连锁挖矿/砍树/石头/泥土 + X加号型 + 耐久/掉落物可配 + 石头泥土自定义（支持 Paper/Spigot 1.16+）
+commands:
+  chainmine:
+    description: 连锁采集管理命令
+    aliases: [cm, 连锁, 连锁采集]
+    usage: /连锁采集 开|关|重载
+permissions:
+  chainmine.use:
+    description: 允许使用连锁采集
+    default: true
+  chainmine.admin:
+    description: 连锁采集管理权限
+    default: op
